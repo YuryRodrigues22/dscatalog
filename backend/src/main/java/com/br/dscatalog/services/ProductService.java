@@ -1,4 +1,4 @@
-package com.br.dscatalog.sevices;
+package com.br.dscatalog.services;
 
 import java.util.Optional;
 
@@ -18,8 +18,8 @@ import com.br.dscatalog.entities.Category;
 import com.br.dscatalog.entities.Product;
 import com.br.dscatalog.repositories.CategoryRepository;
 import com.br.dscatalog.repositories.ProductRepository;
-import com.br.dscatalog.sevices.exceptions.DatabaseException;
-import com.br.dscatalog.sevices.exceptions.ResourceNotFoundException;
+import com.br.dscatalog.services.exceptions.DatabaseException;
+import com.br.dscatalog.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ProductService {

@@ -1,4 +1,4 @@
-package com.br.dscatalog.sevices.exceptions;
+package com.br.dscatalog.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
@@ -6,5 +6,4 @@ public class ResourceNotFoundException extends RuntimeException {
 	public ResourceNotFoundException(String msg) {
 		super(msg);
 	}
-
 }

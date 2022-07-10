@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.br.dscatalog.dto.ProductDTO;
-import com.br.dscatalog.sevices.ProductService;
+import com.br.dscatalog.services.ProductService;
 
 @RestController
 @RequestMapping(value = "/products")

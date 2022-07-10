@@ -2,12 +2,15 @@ package com.br.dscatalog.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -16,18 +19,21 @@ import javax.persistence.Table;
 @Table(name = "tb_category")
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant createdAt;
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant updateAt;
-	
+
+	@ManyToMany(mappedBy = "categories")
+	private Set<Product> products = new HashSet<>();
+
 	public Category() {
 	}
 
@@ -59,17 +65,24 @@ public class Category implements Serializable {
 	public Instant getUpdateAt() {
 		return updateAt;
 	}
-	
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+
 	@PrePersist
 	public void prePersist() {
 		createdAt = Instant.now();
 	}
-	
+
 	@PreUpdate
 	public void preUpdate() {
 		updateAt = Instant.now();
 	}
-	
 
 	@Override
 	public int hashCode() {
@@ -94,6 +107,6 @@ public class Category implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}	
-	
+	}
+
 }

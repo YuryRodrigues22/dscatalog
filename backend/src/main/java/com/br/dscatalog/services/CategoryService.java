@@ -1,4 +1,4 @@
-package com.br.dscatalog.sevices;
+package com.br.dscatalog.services;
 
 import java.util.Optional;
 
@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.br.dscatalog.dto.CategoryDTO;
 import com.br.dscatalog.entities.Category;
 import com.br.dscatalog.repositories.CategoryRepository;
-import com.br.dscatalog.sevices.exceptions.DatabaseException;
-import com.br.dscatalog.sevices.exceptions.ResourceNotFoundException;
+import com.br.dscatalog.services.exceptions.DatabaseException;
+import com.br.dscatalog.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CategoryService {
@@ -60,13 +60,12 @@ public class CategoryService {
 	public void delete(Long id) {
 		
 		try {
-		repository.deleteById(id);
-		}catch (EmptyResultDataAccessException e) {
-			 throw new ResourceNotFoundException("Id not found " + id);
+			repository.deleteById(id);
+		} catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException("Id not found " + id);
 		} catch (DataIntegrityViolationException e) {
 			throw new DatabaseException("Integrity Violation");
 		}
-		
 	}
 
 }

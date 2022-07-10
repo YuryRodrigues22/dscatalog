@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.br.dscatalog.dto.CategoryDTO;
-import com.br.dscatalog.sevices.CategoryService;
+import com.br.dscatalog.services.CategoryService;
 
 @RestController
 @RequestMapping(value = "/categories")

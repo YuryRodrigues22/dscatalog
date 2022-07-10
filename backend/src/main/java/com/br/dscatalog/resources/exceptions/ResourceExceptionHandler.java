@@ -9,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.br.dscatalog.sevices.exceptions.DatabaseException;
-import com.br.dscatalog.sevices.exceptions.ResourceNotFoundException;
+import com.br.dscatalog.services.exceptions.DatabaseException;
+import com.br.dscatalog.services.exceptions.ResourceNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
