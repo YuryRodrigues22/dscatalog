@@ -2,6 +2,9 @@ package com.br.dscatalog.dto;
 
 import javax.validation.constraints.NotBlank;
 
+import com.br.dscatalog.services.validation.UserInsertValid;
+
+@UserInsertValid
 public class UserInsertDTO extends UserDTO {
 	private static final long serialVersionUID = 1L;
 
