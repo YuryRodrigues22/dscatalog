@@ -70,10 +70,6 @@ public class Category implements Serializable {
 		return products;
 	}
 
-	public void setProducts(Set<Product> products) {
-		this.products = products;
-	}
-
 	@PrePersist
 	public void prePersist() {
 		createdAt = Instant.now();
