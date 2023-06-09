@@ -34,7 +34,8 @@ const Catalog = () => {
         </div>
         <div className="col-sm-6 col-lg-4 col-xl-3">
           <ProductCard product={product} />
-        </div><div className="col-sm-6 col-lg-4 col-xl-3">
+        </div>
+        <div className="col-sm-6 col-lg-4 col-xl-3">
           <ProductCard product={product} />
         </div>
       </div>
