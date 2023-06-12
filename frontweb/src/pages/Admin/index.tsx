@@ -1,6 +1,14 @@
+import NavBar from "./NavBar";
+import './styles.css';
+
 const Admin = () => {
     return (
-        <h1>Admin</h1>
+        <div className="admin-container">
+            <NavBar />
+            <div className="admin-content">
+                <h1>Conteúdo</h1>
+            </div>
+        </div>
     );
 };
 
