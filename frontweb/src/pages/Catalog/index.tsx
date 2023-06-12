@@ -1,7 +1,9 @@
 import ProductCard from 'components/ProductCard';
+import Pagination from 'components/Pagination';
 import { Link } from 'react-router-dom';
 import { Product } from 'types/product';
 import './styles.css';
+
 
 const Catalog = () => {
 
@@ -51,6 +53,9 @@ const Catalog = () => {
             <ProductCard product={product} />
           </Link>
         </div>
+      </div>
+      <div className="row">
+        <Pagination />
       </div>
     </div>
   );
