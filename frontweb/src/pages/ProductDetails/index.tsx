@@ -1,9 +1,17 @@
+import axios from 'axios';
 import './styles.css';
 import { ReactComponent as ArrowIcon } from 'assets/images/arrow.svg';
 import ProductPrice from 'components/ProductPrice';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from 'util/requests';
 
 const ProductDetails = () => {
+
+    // Forma Incorreta
+    axios.get(BASE_URL + "/products/2").then(response => {
+        console.log(response.data)
+    });
+
     return (
         <div className="product-details-container">
             <div className="base-card product-details-card">
